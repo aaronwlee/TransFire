@@ -11,7 +11,7 @@ Only for [Deno](https://deno.land/)
 - [Decorators](#decorators)
 
 ## Getting Start
-> MUST: Before you start it, You must configure the tsconfig.json file to this project is working.
+> MUST: Before you start it, You must configure the tsconfig.json file to this project is working properly.
 
 **Please add this three configures into the compilerOptions**
 ```
