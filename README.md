@@ -274,19 +274,15 @@ class UserDTO extends ValidatorBase {
 
 
 - `@Require()`
-<br />
-`@Require(requireMessage: string)`
-<br />
-`@Require(validator: CustomValidator[], requireMessage?: string)`
-<br />
-`@Require(validator: CustomValidator[], requireMessage?: string)`
+- `@Require(requireMessage: string)`
+- `@Require(validator: CustomValidator[], requireMessage?: string)`
+- `@Require(validator: CustomValidator[], requireMessage?: string)`
 <br /> Set the property as a required field.
 
 
 
 - `@Optional()`
-<br />
-`@Optional(validator: CustomValidator[])`
+- `@Optional(validator: CustomValidator[])`
 <br /> Set the property as an optional field.
 
 
