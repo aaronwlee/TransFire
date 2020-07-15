@@ -1,4 +1,5 @@
 # TransFire - v0.1
+[![nest badge](https://nest.land/badge.svg)](https://nest.land/package/TransFire)
 
 Create a class-based data transfer object(DTO) with decorators and validating data at the same time. 
 
