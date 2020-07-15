@@ -22,7 +22,17 @@ Only for [Deno](https://deno.land/)
 
 ### Let's start create a validator
 ```ts
-import { Validator, ValidatorBase, Require, Optional, isString, isNumber, length, isEmail, isArrayOf } from "./mod.ts";
+import { 
+  Validator, 
+  ValidatorBase, 
+  Require, 
+  Optional, 
+  isString, 
+  isNumber, 
+  length, 
+  isEmail, 
+  isArrayOf 
+} from "https://x.nest.land/TransFire@0.1.0/mod.ts";
 
 @Validator()
 class UserDTO extends ValidatorBase {
@@ -103,7 +113,7 @@ Aaron
 
 ### Try this simple example
 ```ts
-import { Validator, ValidatorBase, Require, Optional, isString, isNumber, length, isEmail, isArrayOf } from "./mod.ts";
+import { Validator, ValidatorBase, Require, Optional, isString, isNumber, length, isEmail, isArrayOf } from "https://x.nest.land/TransFire@0.1.0/mod.ts";
 
 @Validator()
 class UserDTO extends ValidatorBase {
@@ -174,7 +184,7 @@ type MessageType = string | (() => string);
 An example of Canada phone number validator
 
 ```ts
-import { Validator, ValidatorBase, Optional, isString, CustomValidator } from "./mod.ts";
+import { Validator, ValidatorBase, Optional, isString, CustomValidator } from "https://x.nest.land/TransFire@0.1.0/mod.ts";
 
 const CAPhoneNumber: CustomValidator = {
   validator: (value) => /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(value),
@@ -193,7 +203,7 @@ class UserDTO extends ValidatorBase {
 An example of an age group validator.
 
 ```ts
-import { Validator, ValidatorBase, Require, isNumber, CustomValidator } from "./mod.ts";
+import { Validator, ValidatorBase, Require, isNumber, CustomValidator } from "https://x.nest.land/TransFire@0.1.0/mod.ts";
 
 function AdultsGroup(): CustomValidator {
   let dynamicMessages = "You do not belong to the adult group."
@@ -227,7 +237,7 @@ You can assign the nest validation object that you may want the validator to per
 Here you can use `@HasOne` and `@HasMany`.
 
 ```ts
-import { Validator, ValidatorBase, Require, Optional, isString, isNumber, length, isArrayOf, HasMany, HasOne } from "./mod.ts";
+import { Validator, ValidatorBase, Require, Optional, isString, isNumber, length, isArrayOf, HasMany, HasOne } from "https://x.nest.land/TransFire@0.1.0/mod.ts";
 
 @Validator()
 class NameDTO extends ValidatorBase {
