@@ -2,9 +2,8 @@ import { getInitErrors, setError, getErrors, getMeta } from "../storage.ts";
 import { _ } from "../deps.ts";
 
 export class ValidatorBase {
-  constructor(...args: any) {
+  constructor(...args: any) { }
 
-  }
   _validator: (params: Object) => null | Object;
 
   _type: string;
@@ -13,7 +12,19 @@ export class ValidatorBase {
   _toObject: Function;
 }
 
-export function Validator(message: string = "Wrong parameter") {
+export interface ValidatorOption {
+  errorOnInvalidParams?: boolean,
+  invalidParamsMessage?: string
+}
+
+export function Validator({
+  errorOnInvalidParams,
+  invalidParamsMessage,
+}: ValidatorOption = {
+    errorOnInvalidParams: true,
+    invalidParamsMessage: "Wrong parameter"
+  }
+) {
   return function <T extends { new(...args: any[]): {} }>(constructor: T) {
     return class extends constructor implements ValidatorBase {
       constructor(...args: any[]) {
@@ -41,14 +52,14 @@ export function Validator(message: string = "Wrong parameter") {
               const result: Object = {}
 
               Object.getOwnPropertyNames(constructor.prototype).forEach(key => {
-                if(key !== "constructor") {
+                if (key !== "constructor") {
 
-                  if(getMeta(`${constructor.name}.${key}`).require) {
+                  if (getMeta(`${constructor.name}.${key}`).require) {
                     result[key] = constructor.prototype[key];
-                  } else if(constructor.prototype[key]) {
+                  } else if (constructor.prototype[key]) {
                     result[key] = constructor.prototype[key];
                   }
-                  
+
                 }
               })
 
@@ -66,8 +77,8 @@ export function Validator(message: string = "Wrong parameter") {
         Object.keys(raw).forEach(r => {
           if (_.has(properties, r)) {
             properties[r] = raw[r];
-          } else {
-            setError(`${constructor.name}.${r}`, [message])
+          } else if (errorOnInvalidParams) {
+            setError(`${constructor.name}.${r}`, [invalidParamsMessage])
           }
         })
 

@@ -269,8 +269,24 @@ class UserDTO extends ValidatorBase {
 
 ## Decorators
 
-- `@Validator(message: string = "Wrong parameter")`
+- `@Validator(ValidatorOption)`
 <br /> Init validator, you can assign the wrong parameter message.
+
+```ts
+interface ValidatorOption {
+  // true: adding errors when the data has an invalid parameter.
+  // false: skipping errors when the data has an invalid parameter.
+  errorOnInvalidParams?: boolean,
+
+  // message string
+  invalidParamsMessage?: string
+}
+
+// default errorOnInvalidParams = true
+// default invalidParamsMessage = "Wrong parameter"
+
+```
+
 <br />
 <br />
 

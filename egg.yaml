@@ -1,0 +1,15 @@
+name: TransFire
+description: Create a class-based data transfer object(DTO) with decorators and validating data at the same time. 
+stable: false
+version: 0.1.0
+entry: mod.ts
+repository: https://github.com/aaronwlee/TransFire
+files:
+  - README.md
+  - mod.ts
+  - types.ts
+  - storage.ts
+  - deps.ts
+  - basicValidator.ts
+  - decorator/**/*
+  - LICENSE

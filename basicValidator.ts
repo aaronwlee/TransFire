@@ -1,5 +1,4 @@
 import { CustomValidator } from "./types.ts"
-import { ValidatorBase } from "./decorator/Validator.ts"
 
 export const isString: CustomValidator = {
   validator: (value) => typeof value === "string", message: "Not a string"
