@@ -271,21 +271,22 @@ class UserDTO extends ValidatorBase {
 
 - `@Validator(message: string = "Wrong parameter")`
 <br /> Init validator, you can assign the wrong parameter message.
-
+<br />
+<br />
 
 - `@Require()`
 - `@Require(requireMessage: string)`
 - `@Require(validator: CustomValidator[], requireMessage?: string)`
 - `@Require(validator: CustomValidator[], requireMessage?: string)`
 <br /> Set the property as a required field.
-
-
+<br />
+<br />
 
 - `@Optional()`
 - `@Optional(validator: CustomValidator[])`
 <br /> Set the property as an optional field.
-
-
+<br />
+<br />
 
 - `@HasMany<T extends ValidatorBase>(
   Model: new (value?: any) => T,
@@ -298,6 +299,8 @@ class UserDTO extends ValidatorBase {
     }
 )`
 <br /> Set the property as a nested field.
+<br />
+<br />
 
 - `@HasOne<T extends ValidatorBase>(
   Model: new (value?: any) => T,
@@ -310,6 +313,8 @@ class UserDTO extends ValidatorBase {
     }
 )`
 <br /> Set the property as a nested array field.
+<br />
+<br />
 
 ```
 ```
