@@ -90,7 +90,7 @@ const errors = userObject._validator(values);
 
 - `_toObject: Function;`
 <br /> Return the data transfer result.
-<br /> This will return `series of the errors` or `null`
+<br /> This will return `series of the transferred data as an object`
 > Note: Due to this validator object has been restructured by the decorator, you may not get values from the entire object class. 
 
 ```ts
